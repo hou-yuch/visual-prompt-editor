@@ -1,0 +1,18 @@
+# Windows / system files
+Thumbs.db
+Desktop.ini
+
+# Logs / temporary files
+*.log
+*.tmp
+*.bak
+
+# Codex temporary test files
+.codex_*
+
+# Node / Firebase local cache
+node_modules/
+.firebase/
+
+# Build outputs
+*.exe

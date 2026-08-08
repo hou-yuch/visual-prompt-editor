@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>圖片 / 影片提示詞編輯器</title>
+  <link rel="stylesheet" href="styles.css?v=20260702-storyboard-executable">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>圖片 / 影片提示詞編輯器</h1>
+        <p>以多選項快速整理圖片、影片與聲音提示詞，適合 Firebase Hosting 長期部署。</p>
+        <p class="version">版本：2026-07-02 storyboard-executable</p>
+      </div>
+      <div class="top-actions">
+        <button id="copyBtn" class="button secondary" type="button">複製</button>
+        <button id="downloadBtn" class="button secondary" type="button">另存 TXT</button>
+        <button id="clearBtn" class="button ghost" type="button">清除</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="panel controls-panel">
+        <div class="tabs" role="tablist" aria-label="編輯器模式">
+          <button class="tab active" type="button" data-tab="image">圖片提示詞</button>
+          <button class="tab" type="button" data-tab="video">影片提示詞</button>
+        </div>
+
+        <form id="editorForm" class="form-grid">
+          <div class="section-title">基本設定</div>
+          <label>
+            <span>模式</span>
+            <select id="mode"></select>
+          </label>
+          <label>
+            <span>平台模板</span>
+            <select id="platform"></select>
+          </label>
+
+          <div class="section-title">核心欄位</div>
+          <div id="dynamicFields" class="field-grid"></div>
+
+          <div class="section-title video-only">第二層：影片技術規格</div>
+          <div id="techFields" class="field-grid video-only"></div>
+
+          <div class="section-title video-only">第三層：專業品質審查</div>
+          <div id="reviewFields" class="check-grid video-only"></div>
+
+          <div class="section-title video-only">第四層：聲音設定</div>
+          <div id="audioFields" class="field-grid video-only"></div>
+          <div id="audioMixFields" class="check-grid video-only"></div>
+
+          <div class="section-title">品質要求</div>
+          <div id="qualityFields" class="check-grid"></div>
+
+          <div class="section-title">排除條件</div>
+          <div id="negativeFields" class="check-grid"></div>
+
+          <button id="generateBtn" class="button primary wide" type="button">產生提示詞</button>
+        </form>
+      </section>
+
+      <section class="panel output-panel">
+        <div class="output-head">
+          <h2>輸出預覽</h2>
+          <span id="statusText">尚未產生</span>
+        </div>
+        <textarea id="output" spellcheck="false"></textarea>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js?v=20260702-storyboard-executable"></script>
+</body>
+</html>
